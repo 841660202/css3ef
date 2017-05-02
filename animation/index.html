@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            @keyframes loader {
+                to { background-position: -800px 0; }
+                }
+            .loader {
+                width: 100px; height: 100px;
+                background: url(http://dabblet.com/img/loader.png) 0 0;/*图片起始位置0 0*/
+                animation: loader 10s infinite steps(8);/*与贝塞尔曲线调速函数迥然不同的是，
+                steps() 会根据你指定的步进数量，把整个动画切分为多帧，而且整个动画会在帧与帧之间硬切，不会做任
+何插值处理*/
+                /* 把文本隐藏起来 */
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+            }/*动画结束后是回到起始状态*/
+        </style>
+    </head>
+    <body>
+    <div class="loader">Loading...</div>
+    </body>
+</html>

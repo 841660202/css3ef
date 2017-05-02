@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+      /**
+        * Blinking
+        */
+
+        @keyframes blink-1 { 50% { color: transparent } }
+        @keyframes blink-2 { to { color: transparent } }
+
+        p {
+            padding: 1em;
+            background: gold;
+        }
+
+        .blink-smooth-1 {
+            animation: 1s blink-1 3;/*50%的时候透明   （{有色-无色}-{有色）-（有色-无色}-{有色）-（有色-无色}-有色）*/
+        }
+
+        .blink-smooth-2 {
+            animation: .5s blink-2 6;/*完成时状态是透明   （{有色-无色}）-（{有色-无色}）-（{有色-无色}）*/
+            /*animation-direction: alternate;*/
+            /*211四个值normal alternate reverse alternate-reverse
+            以三周期为例子：normal     明-暗 明-暗 明-暗       3个
+                           alternate  明-暗 暗-明 明-暗       2个
+                           reverse 暗-明 暗-明 暗-明          3个
+                           alternate-reverse 暗-明 明-暗 暗-明  2个
+            
+            
+            
+            */
+        }
+        .blink-smooth-2.normal {/*6次*/
+            animation-direction: normal; 
+        }
+        .blink-smooth-2.alternate {/*3次*/
+            animation-direction: alternate;
+        }
+        .blink-smooth-2.reverse {/*6次*/
+            animation-direction: reverse;
+        }
+        .blink-smooth-2.alternate-reverse {/*3次*/
+            animation-direction: alternate-reverse;
+        }
+        .blink {
+            animation: 1s blink-1 3 steps(1);
+            
+        }
+       </style>
+    </head>
+    <body>
+    <p class="blink-smooth-1">animation: 1s blink-1 3;</p>
+    <p class="blink-smooth-2 normal"> animation: .5s blink-2 6;-------normal</p>
+    <p class="blink-smooth-2 alternate"> animation: .5s blink-2 6;--------alternate</p>
+    <p class="blink-smooth-2 reverse"> animation: .5s blink-2 6;---------reverse</p>
+    <p class="blink-smooth-2 alternate-reverse"> animation: .5s blink-2 6;--------alternate-reverse</p>
+    <p class="blink">steps --------比较生硬</p>
+    </body>
+</html>
