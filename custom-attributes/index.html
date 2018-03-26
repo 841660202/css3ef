@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <style>
+        .el {
+            transition: max-height 2s ;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        .trigger:hover > .el {
+            max-height: var(--max-height);
+        }
+
+    </style>
+    <script>
+        var el = document.querySelector('.el')
+        var height = el.scrollHeight
+        el.style.setProperty('--max-height', height + 'px')
+    </script>
+</head>
+<body>
+<div class="trigger">
+    Hover me to see a height transition.
+    <div class="el">
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+        content <br>
+    </div>
+</div>
+</body>
+</html>

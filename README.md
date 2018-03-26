@@ -17,8 +17,16 @@ CSS3special effects
   * 接着，把文字之外的背景色给裁剪掉(只显示文字)；
   * 最后，用@keyframes，让背景白色位置循环从左到右执行。
   
-## branch
+## Branch Standard
 
 * master
-* dev_0.18             (2018)
-* dev_local_0.18.3     (dev 本地分支 2018。3 )
+* dev_0.18 
+  * (2018)
+  * create from master
+* dev_local_0.18.3     
+  * (dev 本地分支 2018.3 )
+  * create from dev_0.18
+
+* only allow 
+  * dev_local_0.18.3 create merge request to dev_0.18,dev_0.18 can accept dev_0.18.xx
+  * dev_local_0.18 create merge request to master, master can accept dev_xxx

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover underline animation</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #0e0f0e;
+        }
+
+        /*1*/
+        /*hover 前*/
+        .hover-underline-animation1::after {
+            content: '';
+            position: absolute;
+
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+
+            transform: scaleX(0);
+            transform-origin: bottom right; /*开始位置 https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin*/
+            transition: transform 0.25s ease-out; /*过度对象 为转化*/
+        }
+
+        .hover-underline-animation1:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /*2*/
+        .hover-underline-animation2::after {
+            content: '';
+            position: absolute;
+
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+
+            transform: scaleX(0);
+            transform-origin: center; /*开始位置 https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin*/
+            transition: transform 0.25s ease-out; /*过度对象 为转化*/
+        }
+
+        .hover-underline-animation2:hover::after {
+            transform: scaleX(1);
+            transform-origin: center;
+        }
+
+        /*3*/
+        .hover-underline-animation3::before, .hover-underline-animation3::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            bottom: 0;
+            background-color: #0087ca;
+
+            transform: scaleY(0);
+            transform-origin: center; /*开始位置 https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin*/
+            transition: transform 0.25s ease-out; /*过度对象 为转化*/
+        }
+
+        .hover-underline-animation3::before {
+            left: -2px;
+        }
+
+        .hover-underline-animation3::after {
+            right: -2px;
+        }
+
+        .hover-underline-animation3:hover::before, .hover-underline-animation3:hover::after {
+            transform: scaleY(1);
+            transform-origin: center;
+        }
+
+        /*4*/
+        .hover-underline-animation4::before, .hover-underline-animation4::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            bottom: 0;
+            background-color: #0087ca;
+
+            transform: scaleY(0);
+            transform-origin: bottom; /*开始位置 https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin*/
+            transition: transform 0.25s ease-out; /*过度对象 为转化*/
+        }
+
+        .hover-underline-animation4::before {
+            left: -2px;
+        }
+
+        .hover-underline-animation4::after {
+            right: -2px;
+        }
+
+        .hover-underline-animation4:hover::before, .hover-underline-animation4:hover::after {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <p class="hover-underline-animation hover-underline-animation1">Hover this text to see the effect!</p>
+    <br>
+    <p class="hover-underline-animation hover-underline-animation2">Hover this text to see the effect!</p>
+    <br>
+    <p class="hover-underline-animation hover-underline-animation3">Hover this text to see the effect!</p>
+    <br>
+    <p class="hover-underline-animation hover-underline-animation4">Hover this text to see the effect!</p>
+    <br>
+</div>
+</body>
+</html>
